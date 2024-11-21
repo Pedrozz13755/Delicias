@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delícias em Pedaços - Bolos e tortas artesanais para momentos especiais.">
+    <meta name="keywords" content="bolos, tortas, doces, confeitaria, delícias, sobremesas">
+    <meta name="author" content="Delícias em Pedaços">
+    <title>Delícias em Pedaços</title>
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fdfdfd;
+            color: #333;
+        }
+
+        header {
+            background: #FFA07A;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #5B1A0E;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .banner {
+            background: url('http://br5.bronxyshost.com:4034/uploads/1732212292750.jpg') no-repeat center center;
+            background-size: cover;
+            height: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .products {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+.product-card2 img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .product-card button {
+            background: #5B1A0E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background: #FFA07A;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #5B1A0E;
+        }
+
+        footer {
+            background: #5B1A0E;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .banner {
+                font-size: 24px;
+                height: 300px;
+            }
+
+            .product-card {
+                width: 90%;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<center>
+    <header>Delícias em Pedaços</header>
+    <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#missao">Nossa missão</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section class="banner"></section>
+<!--menu de opções--->
+        <section id="produtos" class="products">
+        <h2 class="section-title">Nosso Menu</h2>
+<div class="product-card2">
+                <img src="http://br5.bronxyshost.com:4034/uploads/1732215928782.jpg" alt="Torta de Limão">
+              
+            </div>
+        </section>
+    <main>
+        <section id="produtos">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Chocolate" alt="Bolo de Chocolate">
+                    <h3>Bolo de Chocolate</h3>
+                    <p>Delicioso bolo de chocolate com cobertura cremosa.</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Morango" alt="Bolo de Morango">
+                    <h3>Bolo de Morango</h3>
+                    <p>Bolo fresco com camadas de morango e chantilly.</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Torta+de+Limão" alt="Torta de Limão">
+                    <h3>Torta de Limão</h3>
+                    <p>Uma torta leve com um toque cítrico irresistível.</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="missao">
+            <h2 class="section-title">Nossa Missão</h2>
+            <p>"Criar momentos inesquecíveis através dos nossos doces artesanais, garantindo qualidade e sabor."</p>
+        </section>
+        
+<!--Cartao de visitas--->
+        <section id="produtos" class="products">
+<div class="product-card">
+                <img src="http://br5.bronxyshost.com:4034/uploads/1732214652519.jpg" alt="Torta de Limão">
+              
+            </div>
+        </section>
+        <section id="contato">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p>Endereço: Setor Engenho Velho, Quadra 10</p>
+            <p>Email: deliciaempedacos@gmail.com</p>
+            <p>Telefone: (61) 3454-2724</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Delícias em Pedaços - Todos os direitos reservados.
+    </footer>
+
+    <div class="modal" id="imageModal">
+        <img src="" alt="Imagem ampliada">
+    </div>
+</center>
+    <script>
+        const images = document.querySelectorAll('.product-card img' || '.product-card2 img');
+        const modal = document.getElementById('imageModal');
+        const modalImg = modal.querySelector('img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.add('active');
+                modalImg.src = img.src;
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
