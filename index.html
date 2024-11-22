@@ -1,263 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Delícias em Pedaços - Bolos e tortas artesanais para momentos especiais.">
-    <meta name="keywords" content="bolos, tortas, doces, confeitaria, delícias, sobremesas">
-    <meta name="author" content="Delícias em Pedaços">
     <title>Delícias em Pedaços</title>
-    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #fdfdfd;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        header {
-            background: #FFA07A;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        nav {
-            background: #5B1A0E;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .banner {
-            background: url('https://i.top4top.io/p_32473b25l0.jpg') no-repeat center center;
-            background-size: cover;
-            height: 4px;
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #000;
+            z-index: 9999;
+        }
+
+        .preloader img {
+            width: 400px;
+            height: auto;
+            animation: subirDescer 2s infinite;
+        }
+
+        .preloader h2 {
             color: white;
-            font-size: 36px;
-            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        @keyframes subirDescer {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .nav-container img {
+            height: 50px;
+        }
+
+        .banner {
+            background: url('https://sodiedoces.com.br/wp-content/themes/sodiedoces/img/bg_bolos_banner.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .banner h1 {
+            font-size: 3em;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        main {
-            padding: 20px;
-        }
-
-        .products {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+        .products-section {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #979440 100%);
         }
 
         .product-card {
-            background: #fff;
+            background: white;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
+            border-radius: 10px;
             overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
         }
 
         .product-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            cursor: pointer;
         }
 
-.product-card2 img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-        }
         .product-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 1.5em;
+            margin: 15px;
         }
 
-        .product-card p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .product-card button {
-            background: #5B1A0E;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px 0;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .product-card button:hover {
-            background: #FFA07A;
-        }
-
-        .section-title {
+        .product-card a {
+            display: block;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: #5B1A0E;
+            margin: 0 15px 15px;
+            padding: 10px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .product-card a:hover {
+            background: #e63946;
         }
 
         footer {
-            background: #5B1A0E;
+            background: #32373c;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .banner {
-                font-size: 24px;
-                height: 300px;
-            }
-
-            .product-card {
-                width: 90%;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 14px;
-            }
+            padding: 20px 0;
         }
     </style>
 </head>
+
 <body>
-<center>
-    <header>Delícias em Pedaços</header>
-    <nav>
-        <a href="#produtos">Produtos</a>
-        <a href="#missao">Nossa missão</a>
-        <a href="#contato">Contato</a>
-    </nav>
+    <!-- Preloader -->
+    <div class="preloader">
+        <img src="https://g.top4top.io/p_32487a8m60.png" alt="Preloader Image">
+    </div>
 
-    <section class="banner"></section>
-<!--menu de opções--->
-        <section id="produtos" class="products">
-        <h2 class="section-title">Nosso Menu</h2>
-<div class="product-card2">
-                <img src="http://br5.bronxyshost.com:4034/uploads/1732215928782.jpg" alt="menu">
-              
-            </div>
-        </section>
-    <main>
-        <section id="produtos">
-            <h2 class="section-title">Nossos Produtos</h2>
-            <div class="products">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Chocolate" alt="Bolo de Chocolate">
-                    <h3>Bolo de Chocolate</h3>
-                    <p>Delicioso bolo de chocolate com cobertura cremosa.</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Morango" alt="Bolo de Morango">
-                    <h3>Bolo de Morango</h3>
-                    <p>Bolo fresco com camadas de morango e chantilly.</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200.png?text=Torta+de+Limão" alt="Torta de Limão">
-                    <h3>Torta de Limão</h3>
-                    <p>Uma torta leve com um toque cítrico irresistível.</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-        </section>
+    <header>
+        <div class="container nav-container">
+         
+      
+   
+            <nav>
+          <h2>🍰Delícias em pedaços</h2>
+            </nav>
+        </div>
+    </header>
 
-        <section id="missao">
-            <h2 class="section-title">Nossa Missão</h2>
-            <p>"Criar momentos inesquecíveis através dos nossos doces artesanais, garantindo qualidade e sabor."</p>
-        </section>
-        
-<!--Cartao de visitas--->
-        <section id="produtos" class="products">
-<div class="product-card">
-                <img src="https://l.top4top.io/p_32476ahs50.jpg" alt="Cartão">
-              
+    <section class="banner">
+        <h1>Delícias em Pedaços</h1>
+        <p>Bolos artesanais feitos com amor para todas as ocasiões.</p>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Nossos Produtos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://cdn.sodiedoces.com.br/wp-content/uploads/2024/10/21135231/Bolo-home-1.png" alt="Bolo Pistache">
+                        <h3>Pistache com Ganache de Limão</h3>
+                        <a href="https://Wa.me/556194090473">Eu Quero</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://cdn.sodiedoces.com.br/wp-content/uploads/2024/10/21135251/Bolo-morango-home.png" alt="Bolo Morango">
+                        <h3>Pistache com Morango</h3>
+                        <a href="https://Wa.me/556194090473">Eu Quero</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/09104647/818-Bolo-Formigueiro.png" alt="Bolo Formigueiro">
+                        <h3>Bolo Formigueiro</h3>
+                        <a href="https://Wa.me/556194090473">Eu Quero</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28111128/131_moca_romeu_bolo-branco_fatia.png" alt="Bolo Morango">
+                        <h3>Bolo Moça Romeu</h3>
+                        <a href="https://Wa.me/556194090473">Eu Quero</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://cdn.sodiedoces.com.br/wp-content/uploads/2021/09/25112733/20412_fotos_bolo_fatia_235x235px49.png" alt="Bolo Bombom">
+                        <h3>Bombom Branco Trufado</h3>
+                        <a href="https://Wa.me/556194090473">Eu Quero</a>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section id="contato">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p>Endereço: Setor Engenho Velho, Quadra 10</p>
-            <p>Email: deliciaempedacos@gmail.com</p>
-            <p>Telefone: (61) 3454-2724</p>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
-        &copy; 2024 Delícias em Pedaços - Todos os direitos reservados.
+        <p>&copy; 2024 Delícias em Pedaços. Todos os direitos reservados.</p>
     </footer>
 
-    <div class="modal" id="imageModal">
-        <img src="" alt="Imagem ampliada">
-    </div>
-</center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        const images = document.querySelectorAll('.product-card img' || '.product-card2 img');
-        const modal = document.getElementById('imageModal');
-        const modalImg = modal.querySelector('img');
+        window.onload = function () {
+            setTimeout(function () {
+                document.querySelector('.preloader').style.display = 'none';
+            }, 3000);
 
-        images.forEach(img => {
-            img.addEventListener('click', () => {
-                modal.classList.add('active');
-                modalImg.src = img.src;
-            });
-        });
-
-        modal.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
+            setTimeout(function () {
+                AOS.init();
+            }, 3500);
+        };
     </script>
 </body>
+
 </html>
